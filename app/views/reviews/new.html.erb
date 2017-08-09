@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row text-center">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h1 class="text-center">
+      Type in your new Review
+      </h1>
+      <%= simple_form_for [@restaurant, @review] do |f| %>
+        <h3>Type in the content of your review</h3>
+        <%= f.text_field :content, class:"form-group" %>
+        <h3>Rating</h3>
+        <%= f.input :rating, collection: Review::RATING, class:"form-group" %>
+        <h3>Submit your review Mofo</h3>
+        <%= f.submit "Create Review" %>
+      <% end %>
+    </div>
+  </div>
+</div>

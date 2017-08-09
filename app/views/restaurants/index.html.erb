@@ -1,0 +1,18 @@
+<div class= "banner">
+<h1>Have a look at our Restaurant list</h1>
+</div>
+<ul>
+<% @restaurants.each do |restaurant| %>
+  <div class="row">
+    <div class="container fixed-heigth fixed-width-large container-inline">
+      <div class="flex-box">
+        <li class="super-list fixed-width"> <%= restaurant.name %> </li>
+            <%= link_to "Details", restaurant_path(restaurant.id), class: "btn btn-default btn-fixed-width" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+</ul>
+
+<%= link_to "Add a new restaurant", new_restaurant_path, class: "btn btn-default btn-last" %>
+
